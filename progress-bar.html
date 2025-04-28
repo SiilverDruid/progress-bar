@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Bar</title>
+
+  <!-- Open Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .progress-wrapper {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .progress-container {
+      position: relative;
+      background: #570000 url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      background-size: cover;
+      border: 5px solid #1a1a1a;
+      border-radius: 12px;
+      height: 70px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    }
+    .progress-bar {
+      background: linear-gradient(135deg, #e2c25e, #d4af37);
+      height: 100%;
+      width: 60%; /* Progress % Here */
+      border-radius: 12px 0 0 12px;
+      transition: width 0.5s ease-in-out;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .progress-labels {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+      padding: 0 10px;
+      box-sizing: border-box;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    }
+    .progress-label {
+      position: relative;
+      flex: 1;
+      text-align: center;
+      padding: 0 5px;
+    }
+    .progress-label:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      right: 0;
+      width: 1px;
+      height: 70%;
+      background-color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-wrapper">
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="progress-labels">
+        <div class="progress-label">1. Discovery (20%)</div>
+        <div class="progress-label">2. Rough Draft (20%)</div>
+        <div class="progress-label">3. Comp. Design (20%)</div>
+        <div class="progress-label">4. Approval (20%)</div>
+        <div class="progress-label">5. Completion (20%)</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
